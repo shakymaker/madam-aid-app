@@ -1,5 +1,4 @@
 'use client';
-
 import { useEffect, useState } from 'react';
 import { Inter } from 'next/font/google';
 import './globals.css';
@@ -16,10 +15,7 @@ export default function RootLayout({ children }) {
     // Mostra la splash per 2 secondi
     setTimeout(() => {
       setShowSplash(false);
-      // Controlla se è la prima visita
-      const isFirstVisit = !localStorage.getItem('hasVisited');
-      setShowOnboarding(isFirstVisit);
-      localStorage.setItem('hasVisited', 'true');
+      setShowOnboarding(true); // Forziamo la visualizzazione dell'onboarding
     }, 2000);
   }, []);
 
