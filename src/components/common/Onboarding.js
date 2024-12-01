@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ArrowLeft } from 'lucide-react';
+import Image from 'next/image';
 
 const OnboardingStep = ({ title, description, image, index, total }) => (
   <div className="flex flex-col items-center px-6 pt-6">
@@ -10,11 +11,14 @@ const OnboardingStep = ({ title, description, image, index, total }) => (
     </button>
     
     <div className="flex-1 flex flex-col items-center justify-center max-w-md mx-auto text-center">
-      <img 
-        src={image} 
-        alt={title}
-        className="w-64 h-64 mb-8"
-      />
+      <div className="w-64 h-64 relative mb-8">
+        <Image 
+          src={image}
+          alt={title}
+          fill
+          style={{ objectFit: 'contain' }}
+        />
+      </div>
       
       <h2 className="text-2xl font-semibold text-gray-800 mb-2">{title}</h2>
       <p className="text-gray-600 mb-8">{description}</p>
@@ -75,7 +79,7 @@ const Onboarding = () => {
             onClick={() => window.location.href = '/login'}
             className="w-full bg-green-600 text-white rounded-lg py-3 font-medium"
           >
-            Let's Start
+            Lets Start
           </button>
         )}
         
