@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { Inter } from 'next/font/google';
-import './globals.css';
+
 import Splash from '@/components/common/Splash';
 import Onboarding from '@/components/common/Onboarding';
 
