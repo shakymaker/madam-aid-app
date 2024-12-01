@@ -8,16 +8,24 @@ import Onboarding from '@/components/common/Onboarding';
 const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({ children }) {
-  const [showSplash, setShowSplash] = useState(true);
-  const [showOnboarding, setShowOnboarding] = useState(false);
+  const [currentView, setCurrentView] = useState('splash');
 
   useEffect(() => {
-    // Mostra la splash per 2 secondi
     setTimeout(() => {
-      setShowSplash(false);
-      setShowOnboarding(true); // Forziamo la visualizzazione dell'onboarding
+      setCurrentView('onboarding');
     }, 2000);
   }, []);
+
+  const renderContent = () => {
+    switch(currentView) {
+      case 'splash':
+        return <Splash />;
+      case 'onboarding':
+        return <Onboarding />;
+      default:
+        return <main className="min-h-screen bg-gray-50">{children}</main>;
+    }
+  };
 
   return (
     <html lang="en">
@@ -27,13 +35,7 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       </head>
       <body className={inter.className}>
-        {showSplash ? (
-          <Splash />
-        ) : showOnboarding ? (
-          <Onboarding />
-        ) : (
-          <main className="min-h-screen bg-gray-50">{children}</main>
-        )}
+        {renderContent()}
       </body>
     </html>
   );
