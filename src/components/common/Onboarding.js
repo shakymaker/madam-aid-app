@@ -42,3 +42,20 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+const steps = [
+  {
+    title: "Create Job Post",
+    description: "Create your job post for free",
+    image: "/images/onboarding/create-job.png"
+  },
+  {
+    title: "Review Applications",
+    description: "Review applications from Family Carers matching your criteria",
+    image: "/images/onboarding/review-applications.png"
+  },
+  {
+    title: "Contact Family Carers",
+    description: "Directly contact or search suitable family carers",
+    image: "/images/onboarding/contact-carers.png"
+  }
+];

@@ -16,24 +16,41 @@ const Splash = () => {
         zIndex: 9999,
       }}
     >
-      <img 
-        src="/icon-512x512.png"
-        alt="MadaMaid"
+      <div 
         style={{
-          width: '200px',
-          height: '200px',
-          animation: 'fadeIn 1s ease-in'
+          color: 'white',
+          fontSize: '48px',
+          fontWeight: 'bold',
+          animation: 'fadeInUp 1s ease-out'
         }}
-      />
+      >
+        <img 
+          src="/icon-512x512.png"
+          alt="MadaMaid"
+          style={{
+            width: '200px',
+            height: 'auto',
+            animation: 'fadeIn 1.5s ease-in'
+          }}
+        />
+      </div>
       <style jsx>{`
         @keyframes fadeIn {
           from {
             opacity: 0;
-            transform: scale(0.9);
           }
           to {
             opacity: 1;
-            transform: scale(1);
+          }
+        }
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
           }
         }
       `}</style>
