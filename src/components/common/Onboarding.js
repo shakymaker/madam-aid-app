@@ -84,7 +84,7 @@ const Onboarding = () => {
             onClick={onComplete}
             className="w-full bg-green-600 text-white rounded-lg py-3 font-medium"
           >
-            Let's Start
+            Let&apos;s Start
           </button>
         )}
         
