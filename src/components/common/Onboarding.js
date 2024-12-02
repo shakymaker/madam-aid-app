@@ -1,24 +1,16 @@
-const OnboardingStep = ({ title, description, image, index, total, onBack }) => (
-  <div className="flex flex-col items-center px-6 pt-6">
-    <button 
-      className="self-start p-2" 
-      onClick={onBack}
-      style={{ visibility: index === 0 ? 'hidden' : 'visible' }}
-    >
-      <ArrowLeft className="w-6 h-6 text-gray-500" />
-    </button>
-    // ... resto del codice ...
-
-
 'use client';
 
 import { useState } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import Image from 'next/image';
 
-const OnboardingStep = ({ title, description, image, index, total }) => (
+const OnboardingStep = ({ title, description, image, index, total, onBack }) => (
   <div className="flex flex-col items-center px-6 pt-6">
-    <button className="self-start p-2">
+    <button 
+      className="self-start p-2"
+      onClick={onBack}
+      style={{ visibility: index === 0 ? 'hidden' : 'visible' }}
+    >
       <ArrowLeft className="w-6 h-6 text-gray-500" />
     </button>
     
@@ -76,6 +68,7 @@ const Onboarding = () => {
         {...steps[currentStep]}
         index={currentStep}
         total={steps.length}
+        onBack={() => setCurrentStep(prev => prev - 1)}
       />
       
       <div className="p-6">
@@ -107,11 +100,3 @@ const Onboarding = () => {
 };
 
 export default Onboarding;
-
-
-<OnboardingStep
-  {...steps[currentStep]}
-  index={currentStep}
-  total={steps.length}
-  onBack={() => setCurrentStep(prev => prev - 1)}
-/>
