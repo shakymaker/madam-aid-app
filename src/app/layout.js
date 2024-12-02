@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Splash from '@/components/common/Splash';
 import Onboarding from '@/components/common/Onboarding';
-import ChooseRole from '@/app/choose-role/page';
+import ChooseRole from '@/components/common/ChooseRole';
 
 const inter = Inter({ subsets: ['latin'] });
 
