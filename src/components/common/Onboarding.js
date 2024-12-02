@@ -81,11 +81,11 @@ const Onboarding = () => {
           </button>
         ) : (
           <button
-            onClick={() => window.location.href = '/login'}
-            className="w-full bg-green-600 text-white rounded-lg py-3 font-medium"
-          >
-            Lets Start
-          </button>
+  onClick={() => window.location.href = '/choose-role'}
+  className="w-full bg-green-600 text-white rounded-lg py-3 font-medium"
+>
+  Let's Start
+</button>
         )}
         
         <button 
