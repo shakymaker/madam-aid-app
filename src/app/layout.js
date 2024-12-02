@@ -1,9 +1,11 @@
 'use client';
+
 import { useEffect, useState } from 'react';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Splash from '@/components/common/Splash';
 import Onboarding from '@/components/common/Onboarding';
+import ChooseRole from '@/app/choose-role/page';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,7 +23,9 @@ export default function RootLayout({ children }) {
       case 'splash':
         return <Splash />;
       case 'onboarding':
-        return <Onboarding />;
+        return <Onboarding onComplete={() => setCurrentView('choose-role')} />;
+      case 'choose-role':
+        return <ChooseRole />;
       default:
         return <main className="min-h-screen bg-gray-50">{children}</main>;
     }
